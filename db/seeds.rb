@@ -1,6 +1,6 @@
-# Add seed data here. Seed your database with `rake db:seed`
-adele = Artist.create(name: "Adele")
+Artist.destroy_all
+Genre.destroy_all
+SongGenre.destroy_all
+Song.destroy_all
 
-roll = Song.create(name: "Rolling in the Deep", artist: adele)
-
-contemporary = Genre.create(name: "contemporary")
+LibraryParser.parse

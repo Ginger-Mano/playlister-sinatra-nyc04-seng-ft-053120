@@ -28,10 +28,13 @@ class LibraryParser
   end
 
   def build_objects(artist_name, song_name, genre_name)
+    # create a new song
     song = Song.create(name: song_name)
+    # create or find the genre
     genre = Genre.find_or_create_by(name: genre_name)
+    # create or find the artist
     artist = Artist.find_or_create_by(name: artist_name)
-
+  
     song.song_genres.build(genre: genre)
     song.artist = artist
     
